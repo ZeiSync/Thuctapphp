@@ -1,9 +1,9 @@
 <?php 
     //connect
-    include ('./config/db_connect.php');
+    include ('db_connect.php');
 
     //write query for all pizza
-    $sql = 'SELECT  pizza, ingerdient, id FROM pizza_order';
+    $sql = 'SELECT  pizza, ingerdient, id FROM pizza_order ORDER BY create_at';
     //make query and get result
     $result = mysqli_query($connect, $sql);
 

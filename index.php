@@ -1,15 +1,7 @@
-<?php include('connect.php') ?>
+<?php include('./config/connect.php') ?>
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <!-- Compiled and minified CSS -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Document</title>
-    </head>
+
         <?php include('temp/header.php'); ?>
 
         <h4 class="center grey-text">Pizza !</h4>
@@ -30,12 +22,12 @@
                                 </ul>
                             </div>
                              <div class="card-action right-align">
-                                <a class="brand-text p2"href="#">More infro</a>
+                                <a class="brand-text p2" href="details.php?id=<?php echo $order['id']?>">More infro</a>
                              </div>
                         </div>
                     </div>
                 
-
+  
                 <?php endforeach; ?>
             </div>
         </div>

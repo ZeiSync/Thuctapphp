@@ -8,6 +8,7 @@
 
 
     if(isset($_POST['submit'])){
+
         //check email
         if(empty($_POST['email'])) {
             $errors ["email"] = "Give me sum mail ?";
@@ -35,25 +36,27 @@
 				$errors["ingerdient"] =  "... u sure ? u want to push these thing to ur pizza ?";
 			}
         }
+
         //if have an errors  then DO sunmthing
         if(array_filter($errors)) {
-            
-        } else {
-
-            // $email = mysqli_real_escape_string($connect, $_POST['email']);
-            // $pizza = mysqli_real_escape_string($connect, $_POST['$pizza']);
-            // $ingerdient = mysqli_real_escape_string($connect, $_POST['ingerdient']);
+            //true
+            //escape sql chars
+            $email = mysqli_real_escape_string($connect, $_POST['email']);
+            $pizza = mysqli_real_escape_string($connect, $_POST['pizza']);
+            $ingerdient = mysqli_real_escape_string($connect, $_POST['ingerdient']);
             //create sql
-            // $sql = "INSERT INTO pizza_order(email, pizza, ingerdient) VALUES ()";
-            $sql = "INSERT INTO pizza_order(title,email,ingredient) VALUES('$title','$email','$ingredient')";
-            
-            // save to db and check
-            if(mysqli_query($connect, $sql)){
-                // success
-                header('Location: index.php');
+            $sql = "INSERT INTO pizza_order(email, pizza, ingerdient) VALUES ('".$email."', '".$pizza."', '".$ingerdient."')";
+
+                //save and check
+            if (mysqli_query($connect, $sql)) {
+                //success
+                header ('Location: index.php');
             } else {
-                echo 'query error: '. mysqli_error($connnect);
+                //errors
+                echo "query_error";
             }
+        } else {
+             
         }
     }
 
