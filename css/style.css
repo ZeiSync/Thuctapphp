@@ -1,0 +1,14 @@
+
+form.white {
+    max-width: 500px;
+    margin: 18px auto;
+    padding: 20px;
+    border-left: 2px solid #ee6e73;
+}
+label {
+    font-size: 14px;
+}
+button {
+    border: none;
+    background-color:aqua;
+}
